@@ -1,0 +1,26 @@
+{
+  "name": "nostr-poster",
+  "version": "1.0.0",
+  "description": "A simple Nostr posting module with POW and expiration",
+  "main": "index.js",
+  "dependencies": {
+    "nostr-tools": "^2.11.0",
+    "ws": "^8.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/besoeasy/nostr-poster.git"
+  },
+  "keywords": [
+    "nostr",
+    "social",
+    "decentralized",
+    "pow"
+  ],
+  "author": "besoeasy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/besoeasy/nostr-poster/issues"
+  },
+  "homepage": "https://github.com/besoeasy/nostr-poster#readme"
+}
