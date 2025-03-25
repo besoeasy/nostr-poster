@@ -5,10 +5,29 @@ const DEFAULT_RELAYS = [
   "wss://relay.damus.io",
   "wss://purplerelay.com",
   "wss://relay.nostr.band",
+  "wss://relay.snort.social",
+  "wss://nostr-pub.wellorder.net",
+  "wss://relay.nostr.bg",
+  "wss://nostr.mom",
+  "wss://offchain.pub",
+  "wss://nostr.bitcoiner.social",
+  "wss://nostr21.com",
+  "wss://nostr.oxtr.dev",
+  "wss://nostr.bongbong.com",
+  "wss://relay.primal.net",
+  "wss://nostr.zbd.gg",
+  "wss://nostr-relay.nokotaro.com",
+  "wss://relayable.org",
+  "wss://public.relaying.io",
+  "wss://nostr.fmt.wiz.biz",
+  "wss://soloco.nl",
+  "wss://relay.mutinywallet.com",
+  "wss://nostr.einundzwanzig.space",
+  "wss://relay.nostr.net",
 ];
-const DEFAULT_POW_DIFFICULTY = 3;
-const DEFAULT_TIMEOUT = 10000; // 10 seconds
 
+const DEFAULT_POW_DIFFICULTY = 2;
+const DEFAULT_TIMEOUT = 1000 * 15;
 /**
  * Extracts hashtags, mentions and links from content
  * @param {string} content - Content to analyze
@@ -118,18 +137,13 @@ async function postToNostr(nsec, content, options = {}) {
   };
 
   // Calculate POW
-  console.log(`Calculating proof of work with difficulty ${powDifficulty}...`);
   event = calculatePow(event, powDifficulty);
-  console.log("POW calculation complete");
 
   const signedEvent = finalizeEvent(event, privateKey);
   const eventId = signedEvent.id;
 
   // Encode event ID as note ID
   const noteId = nip19.noteEncode(eventId);
-
-  // Publish to relays
-  console.log(`Publishing to ${relays.length} relays...`);
 
   const relayResults = await Promise.allSettled(
     relays.map(async (relayUrl) => {

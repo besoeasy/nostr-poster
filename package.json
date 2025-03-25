@@ -1,6 +1,6 @@
 {
   "name": "nostr-poster",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple Nostr posting module with POW and expiration",
   "main": "index.js",
   "dependencies": {
