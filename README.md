@@ -5,7 +5,7 @@ A simple Nostr posting module with Proof of Work and optional expiration.
 ## Installation
 
 ```bash
-npm install nostr-poster
+npm install besoeasy/nostr-poster
 ```
 
 ## Usage
