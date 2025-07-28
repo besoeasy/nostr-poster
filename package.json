@@ -1,8 +1,14 @@
 {
   "name": "nostr-poster",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A simple Nostr posting module with POW and expiration",
   "main": "index.js",
+  "type": "module",
+  "files": [
+    "index.js",
+    "relays.json",
+    "README.md"
+  ],
   "dependencies": {
     "nostr-tools": "^2.11.0",
     "ws": "^8.18.1"
